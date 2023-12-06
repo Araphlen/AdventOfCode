@@ -58,15 +58,11 @@ for l_idx,line in enumerate(lines):
             tour_du_chiffre+=lines[l_idx+1][i_nb:i_nb+len(nb)]
             tour_du_chiffre+=lines[l_idx-1][i_nb:i_nb+len(nb)]
 
-            print()
             for carac in special_characters:
                 if carac in tour_du_chiffre:
                     tot += int(nb)
                     
     else:
-        print("dernieres ligne")
-        print(lines[l_idx-1])
-        print(line)
         for nb, i_nb in chiffres.items():
             #reset du tour du nombre
             tour_du_chiffre=""

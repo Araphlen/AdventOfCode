@@ -37,8 +37,11 @@ for l_idx,line in enumerate(lines):
             tour_du_chiffre+=lines[-1][i_nb:i_nb+len(nb)]
 
             for carac in special_characters:
-                if carac in tour_du_chiffre:
-                    tot += int(nb)
+                nbcarac=0
+                for c in tour_du_chiffre:
+                    if c==carac:
+                        nbcarac+=1
+                tot += int(nb)*nbcarac
                     
 
     elif l_idx<len(lines)-1:
@@ -59,8 +62,11 @@ for l_idx,line in enumerate(lines):
             tour_du_chiffre+=lines[l_idx-1][i_nb:i_nb+len(nb)]
 
             for carac in special_characters:
-                if carac in tour_du_chiffre:
-                    tot += int(nb)
+                nbcarac=0
+                for c in tour_du_chiffre:
+                    if c==carac:
+                        nbcarac+=1
+                tot += int(nb)*nbcarac
                     
     else:
         for nb, i_nb in chiffres.items():
@@ -79,8 +85,11 @@ for l_idx,line in enumerate(lines):
             tour_du_chiffre+=lines[l_idx-1][i_nb:i_nb+len(nb)]
             tour_du_chiffre+=lines[0][i_nb:i_nb+len(nb)]
             for carac in special_characters:
-                if carac in tour_du_chiffre:
-                    tot += int(nb)
-                    
+                nbcarac=0
+                for c in tour_du_chiffre:
+                    if c==carac:
+                        nbcarac+=1
+                tot += int(nb)*nbcarac
+                                        
 
 print(tot)
